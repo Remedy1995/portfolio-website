@@ -44,7 +44,7 @@ Use `npm run build` without that variable for hosting at the domain root. GitHub
 
 See `CONTENT-CHECKLIST.md` for the personal details and project evidence to confirm. Project screenshots and the portrait originate from the owner's existing portfolio repository. Manrope is distributed under the SIL Open Font License, included with the local font.
 
-The contact form prepares an email in the visitor's email application; there is no form backend or message storage. The gallery, screenshot dialogs, and email-copy action work in the static build.
+The contact form posts to FormSubmit's cross-origin AJAX endpoint and emails enquiries to the address in `lib/content.ts`. No API key or server runtime is required. FormSubmit requires the owner to click its one-time activation email before delivery works. Trigger activation with a clearly labelled setup submission, verify the inbox, then send a second test to confirm delivery and Reply-To. The UI does not claim success for activation or failed responses; it preserves the entered details and provides a direct email fallback. Duplicate clicks are blocked while sending, requests time out after 20 seconds, and a hidden honeypot rejects basic automated submissions. FormSubmit retains submissions for 30 days; the form links to its privacy policy. The gallery, screenshot dialogs, and email-copy action work in the static build.
 
 ## Design and accessibility
 
